@@ -181,14 +181,13 @@ textarea { min-height:86px; resize:vertical; line-height:1.6; }
       <div class="card-title">1 · Audio de la reunión</div>
       <div class="card-sub">Haz clic en la zona o arrastra tu archivo de audio.</div>
 
-      <input type="file" id="audioFile" accept="audio/*,video/*,.m4a,.mp3,.mp4,.wav,.ogg,.webm" style="display:none">
-
-      <div class="upload-zone" id="uploadZone">
+      <label for="audioFile" class="upload-zone" id="uploadZone">
+        <input type="file" id="audioFile" accept="audio/*,video/*,.m4a,.mp3,.mp4,.wav,.ogg,.webm" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none">
         <div class="upload-icon">🎙️</div>
         <h3>Haz clic aquí o arrastra el archivo</h3>
         <p>Compatible con cualquier formato de audio o vídeo</p>
         <div class="file-formats">M4A · MP3 · MP4 · WAV · OGG</div>
-      </div>
+      </label>
 
       <div class="file-ok" id="fileOk">
         <span style="font-size:22px">✅</span>
@@ -265,8 +264,6 @@ const API_KEY = "sk-ant-api03-mPL24INGhgmPyn7uqQd0_nGISKCr6Eacw1FFRusuou16iNuYGp
 // ---- FILE UPLOAD ----
 const audioInput = document.getElementById('audioFile');
 const uploadZone = document.getElementById('uploadZone');
-
-uploadZone.addEventListener('click', () => audioInput.click());
 
 audioInput.addEventListener('change', e => {
   if (e.target.files[0]) handleFile(e.target.files[0]);
