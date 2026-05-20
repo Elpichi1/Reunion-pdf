@@ -181,13 +181,16 @@ textarea { min-height:86px; resize:vertical; line-height:1.6; }
       <div class="card-title">1 · Audio de la reunión</div>
       <div class="card-sub">Haz clic en la zona o arrastra tu archivo de audio.</div>
 
-      <label for="audioFile" class="upload-zone" id="uploadZone">
-        <input type="file" id="audioFile" accept="audio/*,video/*,.m4a,.mp3,.mp4,.wav,.ogg,.webm" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none">
+      <input type="file" id="audioFile" accept="audio/*,video/*,.m4a,.mp3,.mp4,.wav,.ogg,.webm" style="display:none">
+      <div class="upload-zone" id="uploadZone">
         <div class="upload-icon">🎙️</div>
         <h3>Haz clic aquí o arrastra el archivo</h3>
         <p>Compatible con cualquier formato de audio o vídeo</p>
         <div class="file-formats">M4A · MP3 · MP4 · WAV · OGG</div>
-      </label>
+        <button type="button" onclick="document.getElementById('audioFile').click()" style="margin-top:14px;padding:10px 24px;background:var(--blue);color:white;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;">
+          Seleccionar archivo
+        </button>
+      </div>
 
       <div class="file-ok" id="fileOk">
         <span style="font-size:22px">✅</span>
